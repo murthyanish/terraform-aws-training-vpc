@@ -4,7 +4,7 @@ data "aws_vpc" "myvpc" {
 
 resource "aws_subnet" "mysubnet" {
   count = 2
-  vpc_id     = aws_vpc.myvpc.id
+  vpc_id     = data.aws_vpc.myvpc.id
   cidr_block = var.subnet_cidr[count.index]
   tags = {
     Name = "amurthy_subnet_${count.index + 1}"
