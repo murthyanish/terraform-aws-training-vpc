@@ -1,5 +1,5 @@
 data "aws_vpc" "myvpc" {
-  vpc_id = var.vpc_id
+  id = var.vpc_id
 }
 
 resource "aws_subnet" "mysubnet" {
